@@ -16,14 +16,14 @@
           <div class="column">
             <form id="upload-profile" action="/settings/custom" method="post" enctype="multipart/form-data">
               <div class="single-block-content avatar-block-content mb-6">
-                <h4 class="mb-4">Banner</h4>
-                <div class="subtitle">Recommend with 1440x262 pixels with GIF, PNG, JPG, JPEG</div>
+                <h4 class="mb-4">横幅图片</h4>
+                <div class="subtitle">推荐使用 1440x262 像素的GIF, PNG, JPG, JPEG格式文件</div>
                 <div class="buttons margin-top" id="selection">
                   <label class="file-label">
                     <input class="file-input" id="file-bn" type="file" name="banner">
                     <span class="file-cta">
                       <span class="file-label">
-                        Choose file
+                        选择文件
                       </span>
                       <span class="file-icon">
                         <i class="fa fa-upload"></i>
@@ -33,16 +33,16 @@
                 </div>
               </div>
               <div class="single-block-content avatar-block-content">
-                <h4 class="mb-4">Profile Background</h4>
+                <h4 class="mb-4">个人主页的背景</h4>
                 <div class="subtitle">
-                  Recommend with 16:9 ratio with PNG, JPG, JPEG
+                  推荐使用 16:9 比例的PNG, JPG, JPEG格式图片
                 </div>
                 <div class="buttons margin-top" id="selection">
                   <label class="file-label">
                     <input class="file-input" id="file-bg" type="file" name="background">
                     <span class="file-cta">
                       <span class="file-label">
-                        Choose file
+                        选择文件
                       </span>
                       <span class="file-icon">
                         <i class="fa fa-upload"></i>
@@ -57,7 +57,7 @@
             </form>
           </div>
           <div class="column">
-            <h4 class="mb-4">Preview</h4>
+            <h4 class="mb-4">预览</h4>
             <div class="preview-block" id="avatar">
               <div class="top-block" {% if customizations['banner'] == True %}style="background: linear-gradient(hsl(var(--main), 25%, 25%, 20%), hsl(var(--main), 25%, 25%, 60%)), url(/profbanner/{{ session['user_data']['id'] }}); background-size: cover"{% endif %}></div>
               <div class="bottom-block">
@@ -109,16 +109,16 @@
       <div class='noti-col noti-col-label'>
         <div class='noti-bannertype'>
           {% if status=='error' %}
-          Warning
+          警告
           {% elif status=='success' %}
-          Notice
+          注意
           {% endif %}
         </div>
         <div class='noti-bannertext'>
           {% if status=='error' %}
-          Uh oh! Be careful!
+          ah-oh! 好像有什么不好的事情发生了!
           {% elif status=='success' %}
-          Hey! Listen!
+          owo! 这里有你的一条通知!
           {% endif %}
         </div>
       </div>

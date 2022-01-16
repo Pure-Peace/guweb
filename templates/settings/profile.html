@@ -9,13 +9,13 @@
   <div class="block-content right">
     <div id="general" class="single-right-block">
       <div class="right-block-header">
-        User Infomation
+        玩家信息
       </div>
       <form action="/settings/profile" method="post" class="setting-block-content">
         <div class="single-block-content">
           <div class="block-content--left">
             <div class="field-label is-normal">
-              <label class="label">Username</label>
+              <label class="label">用户名</label>
             </div>
           </div>
           <div class="block-content--right">
@@ -32,7 +32,7 @@
         <div class="single-block-content">
           <div class="block-content--left">
             <div class="field-label is-normal">
-              <label class="label">Email</label>
+              <label class="label">邮箱</label>
             </div>
           </div>
           <div class="block-content--right">
@@ -77,16 +77,16 @@
       <div class='noti-col noti-col-label'>
         <div class='noti-bannertype'>
           {% if status=='error' %}
-          Warning
+          警告
           {% elif status=='success' %}
-          Notice
+          注意
           {% endif %}
         </div>
         <div class='noti-bannertext'>
           {% if status=='error' %}
-          Uh oh! Be careful!
+          ah-oh! 好像有什么不好的事情发生了!
           {% elif status=='success' %}
-          Hey! Listen!
+          owo! 这里有你的一条通知!
           {% endif %}
         </div>
       </div>
