@@ -28,7 +28,7 @@
                         </div>
                         <div class="map-date">
                             <time>
-                                <% timeago.format(map.play_time) %>
+                                <% timeago.format(map.play_time, 'zh_CN') %>
                             </time>
                         </div>
                     </div>
@@ -149,10 +149,10 @@
                 </h1>
                 <transition name="fade">
                     <div class="subtitle" v-if='data.status.online == false'>
-                        <a class='circle'>●</a> Offline
+                        <a class='circle'>●</a> 离线
                     </div>
                     <div class="subtitle" v-else-if='data.status.online == true'>
-                        <a class='circle green'>●</a> Online
+                        <a class='circle green'>●</a> 在线
                     </div>
                 </transition>
             </div>
