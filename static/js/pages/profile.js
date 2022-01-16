@@ -148,33 +148,33 @@ new Vue({
         actionIntToStr(d) {
             switch (d.action) {
                 case 0:
-                    return 'Idle: 🔍 Song Select';
+                    return '闲置: 🔍 选择歌曲';
                 case 1:
                     return '🌙 AFK';
                 case 2:
-                    return `Playing: 🎶 ${d.info_text}`;
+                    return `正在玩: 🎶 ${d.info_text}`;
                 case 3:
-                    return `Editing: 🔨 ${d.info_text}`;
+                    return `正在作图: 🔨 ${d.info_text}`;
                 case 4:
-                    return `Modding: 🔨 ${d.info_text}`;
+                    return `正在编辑: 🔨 ${d.info_text}`;
                 case 5:
-                    return 'In Multiplayer: Song Select';
+                    return '在多人游戏中: 选择歌曲';
                 case 6:
-                    return `Watching: 👓 ${d.info_text}`;
+                    return `正在观看: 👓 ${d.info_text}`;
                     // 7 not used
                 case 8:
-                    return `Testing: 🎾 ${d.info_text}`;
+                    return `正在测试: 🎾 ${d.info_text}`;
                 case 9:
-                    return `Submitting: 🧼 ${d.info_text}`;
+                    return `正在提交: 🧼 ${d.info_text}`;
                     // 10 paused, never used
                 case 11:
-                    return 'Idle: 🏢 In multiplayer lobby';
+                    return '闲置: 🏢 在多人游戏中';
                 case 12:
-                    return `In Multiplayer: Playing 🌍 ${d.info_text} 🎶`;
+                    return `在多人游戏中: 正在游玩 🌍 ${d.info_text} 🎶`;
                 case 13:
-                    return 'Idle: 🔍 Searching for beatmaps in osu!direct';
+                    return '闲置: 🔍 在osu!direct中查找谱面';
                 default:
-                    return 'Unknown: 🚔 not yet implemented!';
+                    return '未知: 🚔 这个玩家正处于异次元';
             }
         },
         addCommas(nStr) {
@@ -190,9 +190,9 @@ new Vue({
         },
         secondsToDhm(seconds) {
             seconds = Number(seconds);
-            var dDisplay = `${Math.floor(seconds / (3600 * 24))}d `;
-            var hDisplay = `${Math.floor(seconds % (3600 * 24) / 3600)}h `;
-            var mDisplay = `${Math.floor(seconds % 3600 / 60)}m `;
+            var dDisplay = `${Math.floor(seconds / (3600 * 24))}天 `;
+            var hDisplay = `${Math.floor(seconds % (3600 * 24) / 3600)}小时 `;
+            var mDisplay = `${Math.floor(seconds % 3600 / 60)}分钟 `;
             return dDisplay + hDisplay + mDisplay;
         },
         StrtoGulagInt() {
