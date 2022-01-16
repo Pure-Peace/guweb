@@ -22,9 +22,9 @@
         </div>
         <div class='noti-bannertext'>
           {% if status=='error' %}
-          Uh oh! Be careful!
+          ah-oh! 好像有什么不好的事情发生了!
           {% elif status=='success' %}
-          Hey! Listen!
+          owo! 这里有你的一条通知!
           {% endif %}
         </div>
       </div>
@@ -42,19 +42,19 @@
       <div class="column flex-vcenter flex-lcenter is-size-2-desktop is-size-1-fullhd" id="title">
         <h1 class="title is-spaced is-size-2-desktop is-size-1-fullhd">{{ appName() }}</h1>
         <h2 class="subtitle">
-          We are an osu! private server built from the ground up with many
-          unique features not seen elsewhere - for more information, check
-          out <a href="http://github.com/cmyui/gulag">gulag</a>
-          and <a href="https://github.com/Yo-ru/guweb">guweb</a>
-          on GitHub - we're fully open source!
+            包含许多全新特性, 国内领先的osu!全模式私服,
+            使用<a href="https://github.com/Pure-Peace/gulag">gulag</a>提供后端强劲性能,
+            使用<a href="https://github.com/Pure-Peace/guweb">guweb</a>提供前端优雅界面.
+            使用<a href="https://github.com/Pure-Peace/peace-performance">PeacePerformance</a>提供全模式PP计算.
+            使用<a href="https://github.com/osuAkatsuki/akatsuki-pp">oppai-ng(akatsuki)</a>提供osu!RX模式PP计算.
         </h2>
         {% if not session.authenticated %}
         <div class="buttons">
           <a class="button is-primary" href="/register">
-            <strong>Sign up</strong>
+            <strong>注册</strong>
           </a>
           <a class="button is-light" href="/login">
-            Log in
+            登录
           </a>
         </div>
         {% endif %}
@@ -68,7 +68,7 @@
 
 <section class="section">
   <div class="container has-text-centered py-4">
-    <h2 class="title mb-6">Some of our coolest features</h2>
+    <h2 class="title mb-6">我们的全新特性</h2>
     <div class="columns has-text-left mb-6">
       <div class="column is-4">
         <div class="columns">
@@ -76,10 +76,10 @@
             <i class="image is-32x32 fas fa-address-card"></i>
           </div>
           <div class="column is-10">
-            <h4 class="title is-spaced is-4">PP for Relax and Autopilot</h4>
-            <p class="subtitle is-6">Our server has unique pp formula for relax and autopilot.
-              Good at waving your cursor or just smashing your keyboard? Join {{ appName() }} and get a fair reward for
-              your skills!
+            <h4 class="title is-spaced is-4">RX和AP的PP计算</h4>
+            <p class="subtitle is-6">我们支持RX和AP的排行榜和分数上传, 与朋友在RX和AP上比拼, 刷榜尽在ppysb.
+              我们使用Akatsuki最新RX算法, 对跳的PP占比和PP总数略有削弱, 但更能体现玩家水平.
+              我们使用peace-performance对全模式进行了PP计算的支持, 对于其他模式相比其他私服, 我们更有优势.
             </p>
           </div>
         </div>
@@ -90,12 +90,9 @@
             <i class="image is-32x32 fas fa-ambulance"></i>
           </div>
           <div class="column is-10">
-            <h4 class="title is-spaced is-4">Free osu!direct</h4>
-            <p class="subtitle is-6">You won't have to pay for osu!supporter to have a convenient gameplay experience in
-              the
-              client - osu!direct is available for everyone! Keep in mind supporting us still grants a huge set of cool
-              perks but
-              absense of it doesn't affect your game sessions!</p>
+            <h4 class="title is-spaced is-4">支持Unranked图排行榜</h4>
+            <p class="subtitle is-6">对于没有在bancho被rank的图, 我们提供以PP为标准的排行榜, 方便您和其他玩家在unranked图
+              进行比拼, 同时我们支持游戏内osu!direct的高速(并不)下载, 方便您在游戏内下载需要的谱面, 我们默认使用chimu镜像源.</p>
           </div>
         </div>
       </div>
@@ -105,9 +102,9 @@
             <i class="image is-32x32 fas fa-archive"></i>
           </div>
           <div class="column is-10">
-            <h4 class="title is-spaced is-4">Flexible library</h4>
-            <p class="subtitle is-6">We're written on top of cmyui's multipurpose library allowing for a fully
-              asynchronous environment, both improving performance and the user's experience in the long term!</p>
+            <h4 class="title is-spaced is-4">支持合理上传成绩</h4>
+            <p class="subtitle is-6">我们接受来自其他服务器, 您合法的Replay上传, 您只需联系客服或者开发者, 并提供能证明replay
+              合法性的证明材料, 我们便可以将您的合法成绩直接上传至服务器.</p>
           </div>
         </div>
       </div>
@@ -119,12 +116,10 @@
 <section class="hero splash">
   <div class="hero-body">
     <div class="container has-text-centered">
-      <h1 class="title is-spaced">What are you waiting for?</h1>
-      <h2 class="subtitle">Join {{ appName() }}! It's risk-free! You won't get your account banned on official servers
-        if
-        you play here with us! And don't worry, as you can always switch between the official servers and us at any time!</h2>
-      <div class="buttons is-centered"><a class="control button is-primary" href="/register">Sign up for free</a><a
-          class="control button is-light" href="/login">Login</a></div>
+      <h1 class="title is-spaced">你还在等什么?</h1>
+      <h2 class="subtitle">加入 {{ appName() }}! 游玩私服不会对你的Bancho账户造成任何影响, 你只需简单一句命令就可以在私服和Bancho直接切换</h2>
+      <div class="buttons is-centered"><a class="control button is-primary" href="/register">免费注册</a><a
+          class="control button is-light" href="/login">登录</a></div>
     </div>
   </div>
 </section>

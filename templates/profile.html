@@ -40,7 +40,7 @@
                                 <div class="map-pp">
                                     <% map.pp.toFixed() %><span class="map-pp-unit">pp</span>
                                 </div>
-                                <div class="map-acc">accuracy:&nbsp;<b>
+                                <div class="map-acc">准确度:&nbsp;<b>
                                         <% map.acc.toFixed(2) %>%
                                     </b></div>
                             </div>
@@ -63,13 +63,13 @@
                 <h1 class="title">: (</h1>
             </div>
             <div class="column">
-                <h1 class="title is-6">No scores available</h1>
-                <p class="subtitle is-7">Try playing something?</p>
+                <h1 class="title is-6">没有可以显示的成绩</h1>
+                <p class="subtitle is-7">随便打点什么图?</p>
             </div>
         </div>
     </div>
     <div v-if="data.scores.{{ id }}.more.full == false" class="extra-block">
-        <a class="show-button" @click="AddLimit('{{ id }}score')">Show more</a>
+        <a class="show-button" @click="AddLimit('{{ id }}score')">显示更多</a>
     </div>
 </div>
 {% endmacro %}
@@ -78,7 +78,7 @@
 <div class="log-block" v-bind:class="{ 'load' : data.maps.{{ id }}.load }">
     <div class="header">
         <div class="title">
-            <i class="fas fa-address-book"></i> Most Played Beatmaps
+            <i class="fas fa-address-book"></i> 玩的最多的谱面
         </div>
     </div>
     <div v-if="data.maps.{{ id }}.out.length != 0" class="beatmaps">
@@ -111,13 +111,13 @@
                 <h1 class="title">: (</h1>
             </div>
             <div class="column">
-                <h1 class="title is-6">No beatmaps available</h1>
-                <p class="subtitle is-7">Try playing something?</p>
+                <h1 class="title is-6">没有可以显示的谱面</h1>
+                <p class="subtitle is-7">随便打点什么图?</p>
             </div>
         </div>
     </div>
     <div v-if="data.maps.{{ id }}.more.full == false" class="extra-block">
-        <a class="show-button" @click="AddLimit('mostplay')">Show more</a>
+        <a class="show-button" @click="AddLimit('mostplay')">显示更多</a>
     </div>
 </div>
 {% endmacro %}
@@ -200,11 +200,7 @@
                             class="mods-shorttext">AP</span></a>
                 </div>
             </div>
-            <div class="bar-selection badge-selects">
-                <span>
-                    Badges not yet implemented!
-                </span>
-            </div>
+            <div class="bar-selection badge-selects"></div>
         </div>
     </div>
     <div class="second-block">
@@ -239,7 +235,7 @@
                 </div>-->
                 <div class="header">
                     <div class="title">
-                        <i class="fas fa-chart-pie"></i> Statistics
+                        <i class="fas fa-chart-pie"></i> 数据
                     </div>
                 </div>
                 <div class="stats-block">
@@ -252,37 +248,37 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><b>Ranked score</b></td>
+                                <td><b>Ranked 分数</b></td>
                                 <td class="right-aligned">
                                     <% addCommas(data.stats.out[modegulag].rscore) %>
                                 </td>
                             </tr>
                             <tr>
-                                <td><b>Total score</b></td>
+                                <td><b>总分数</b></td>
                                 <td class="right-aligned">
                                     <% addCommas(data.stats.out[modegulag].tscore) %>
                                 </td>
                             </tr>
                             <tr>
-                                <td><b>Max combo</b></td>
+                                <td><b>最大连击</b></td>
                                 <td class="right-aligned">
                                     <% addCommas(data.stats.out[modegulag].max_combo) %>
                                 </td>
                             </tr>
                             <tr>
-                                <td><b>Playcount</b></td>
+                                <td><b>游玩次数</b></td>
                                 <td class="right-aligned">
                                     <% addCommas(data.stats.out[modegulag].plays) %>
                                 </td>
                             </tr>
                             <tr>
-                                <td><b>Playtime</b></td>
+                                <td><b>游玩时间</b></td>
                                 <td class="right-aligned">
                                     <% secondsToDhm(data.stats.out[modegulag].playtime) %>
                                 </td>
                             </tr>
                             <tr>
-                                <td><b>Accuracy</b></td>
+                                <td><b>准确度</b></td>
                                 <td class="right-aligned">
                                     <% data.stats.out[modegulag].acc %>%
                                 </td>
@@ -342,9 +338,9 @@
                 </div>-->
             </div>
             <div class="column">
-                {{ scores('Best Scores', 'best')}}
-                {{ scores('Recent Scores', 'recent')}}
-                {{ maps('Most Beatmaps Played', 'most')}}
+                {{ scores('最好成绩', 'best')}}
+                {{ scores('最近成绩', 'recent')}}
+                {{ maps('玩的最多的谱面', 'most')}}
             </div>
         </div>
     </div>

@@ -36,13 +36,13 @@
                 <i class="mode-icon mode-mania"></i><span class="modetext"> osu!mania</span>
             </a>
         </div>
-        <div class="banner-text">Leaderboard</div>
+        <div class="banner-text">排行榜</div>
         <div class="selector">
             <div class="left">
                 <a class="simple-banner-switch" v-bind:class="{ 'active': sort === 'pp' }"
                 @click="LoadLeaderboard('pp', mode, mods, '')">PP</a>
                 <a class="simple-banner-switch" v-bind:class="{ 'active': sort === 'rscore' }"
-                @click="LoadLeaderboard('rscore', mode, mods, '')">Score</a>
+                @click="LoadLeaderboard('rscore', mode, mods, '')">分数</a>
             </div>
             <div class="right">
                 <a class="simple-banner-switch" v-bind:class=" { 'active': mods === 'vn' }"
@@ -66,9 +66,9 @@
                                 <% (sort=='pp' ? "PP" : "" ) %>
                                     <% (sort=='rscore' ? "Score" : "" ) %>
                             </th>
-                            <th class="t-heading"> Accuracy </th>
-                            <th class="t-heading"> Playcount </th>
-                            <th class="t-heading"> Max Combo </th>
+                            <th class="t-heading"> 准确度 </th>
+                            <th class="t-heading"> 游玩次数 </th>
+                            <th class="t-heading"> 最大连击 </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -106,7 +106,7 @@
             </div>
             <div v-else>
                 <div class="text-center">
-                    there are no players to display!
+                    没有要显示的玩家!
                 </div>
             </div>
         </div>
