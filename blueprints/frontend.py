@@ -318,7 +318,7 @@ async def render_profile(user):
     if not user or not (user['priv'] & Privileges.Normal or is_staff):
         return (await render_template('404.html'), 404)
 
-    user['customisation'] = utils.has_profile_customizations(id)
+    user['customisation'] = utils.has_profile_customizations(user['id'])
 
     return await render_template('profile.html', user=user, mode=mode, mods=mods)
 
