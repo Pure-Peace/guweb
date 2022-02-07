@@ -163,7 +163,9 @@ async def settings_avatar_post():
 
     # avatar change success
     pilavatar = utils.crop_image(pilavatar)
-    pilavatar.save(os.path.join(AVATARS_PATH, f'{session["user_data"]["id"]}{file_extension.lower()}'))
+    pilavatar = pilavatar.convert("RGBA")
+    # pilavatar.save(os.path.join(AVATARS_PATH, f'{session["user_data"]["id"]}{file_extension.lower()}'))
+    pilavatar.save(os.path.join(AVATARS_PATH, f'{session["user_data"]["id"]}.png'))
     return await flash('success', 'Your avatar has been successfully changed!', 'settings/avatar')
 
 @frontend.route('/settings/custom')
