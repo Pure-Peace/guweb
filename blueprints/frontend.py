@@ -179,7 +179,9 @@ async def settings_custom():
 async def settings_custom_post():
     banner = (await request.files).get('banner')
     background = (await request.files).get('background')
-    ALLOWED_EXTENSIONS = ['.jpeg', '.jpg', '.png', '.gif']
+    # ALLOWED_EXTENSIONS = ['.jpeg', '.jpg', '.png', '.gif']
+    ALLOWED_EXTENSIONS = ['.jpeg', '.jpg', '.png']
+
 
     # no file uploaded; deny post
     if banner is None and background is None:
@@ -188,7 +190,8 @@ async def settings_custom_post():
     if banner is not None and banner.filename:
         filename, file_extension = os.path.splitext(banner.filename.lower())
         if not file_extension in ALLOWED_EXTENSIONS:
-            return await flash_with_customizations('error', f'The banner you select must be either a .JPG, .JPEG, .PNG or .GIF file!', 'settings/custom')
+            # return await flash_with_customizations('error', f'The banner you select must be either a .JPG, .JPEG, .PNG or .GIF file!', 'settings/custom')
+            return await flash_with_customizations('error', f'The banner you select must be either a .JPG, .JPEG, .PNG file!', 'settings/custom')
 
         banner_file_no_ext = os.path.join(f'.data/banners', f'{session["user_data"]["id"]}')
 
@@ -198,12 +201,17 @@ async def settings_custom_post():
             if os.path.isfile(banner_file_with_ext):
                 os.remove(banner_file_with_ext)
 
-        await banner.save(f'{banner_file_no_ext}{file_extension}')
+        banner = Image.open(banner)
+        banner = banner.convert("RGBA")
+
+        # await banner.save(f'{banner_file_no_ext}{file_extension}')
+        await banner.save(f'{banner_file_no_ext}.png')
 
     if background is not None and background.filename:
         filename, file_extension = os.path.splitext(background.filename.lower())
         if not file_extension in ALLOWED_EXTENSIONS:
-            return await flash_with_customizations('error', f'The background you select must be either a .JPG, .JPEG, .PNG or .GIF file!', 'settings/custom')
+            # return await flash_with_customizations('error', f'The background you select must be either a .JPG, .JPEG, .PNG or .GIF file!', 'settings/custom')
+            return await flash_with_customizations('error', f'The background you select must be either a .JPG, .JPEG, .PNG file!', 'settings/custom')
 
         background_file_no_ext = os.path.join(f'.data/backgrounds', f'{session["user_data"]["id"]}')
 
@@ -213,7 +221,11 @@ async def settings_custom_post():
             if os.path.isfile(background_file_with_ext):
                 os.remove(background_file_with_ext)
 
-        await background.save(f'{background_file_no_ext}{file_extension}')
+        background = Image.open(background)
+        background = background.convert("RGBA")
+
+        # await background.save(f'{background_file_no_ext}{file_extension}')
+        await background.save(f'{background_file_no_ext}.png')
 
     return await flash_with_customizations('success', 'Your customisation has been successfully changed!', 'settings/custom')
 
